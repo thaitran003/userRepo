@@ -16,17 +16,18 @@ exports.all = async (req, res) => {
 };
 exports.store = async (req, res) => {
   try {
-    const { name, avata, age } = req.body;
-    if (!name || !avata || !age) {
+    const { name, avata, age,gender } = req.body;
+    if (!name || !avata || !age||!gender) {
       return res.json({
         status: 422,
-        message: "name,avata,age is require",
+        message: "name,avata,age,gender is require",
       });
     }
     const user = await UserModel.create({
       name: name,
       avata: avata,
       age: parseInt(age),
+      gender:gender
     });
     return res.json({
       status: 200,

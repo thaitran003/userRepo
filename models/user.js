@@ -5,6 +5,7 @@ const UserSchema = new Schema({
     name: String,
     avata: String,
     age: Number,
+    gender:String
 }, {
     timestamps: {
         createdAt: "created_at", 
